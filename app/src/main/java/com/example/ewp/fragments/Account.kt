@@ -38,6 +38,7 @@ class Account : Fragment() {
             mAuth.signOut()
             startActivity(Intent(context,HomeActivity::class.java))
             activity?.finish()
+//            hii
         }
 
         return view
