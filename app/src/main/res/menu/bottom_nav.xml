@@ -6,7 +6,7 @@
         android:id="@+id/home"
         android:icon="@drawable/baseline_home_24"
         app:cnb_iconColor = "#1EAFF1"
-        app:cnb_backgroundColor = "#B1A85A"
+        app:cnb_backgroundColor = "#F0F8F0AA"
         app:cnb_textColor = "#0354CD"
         />
     <item android:title="Catalogue"

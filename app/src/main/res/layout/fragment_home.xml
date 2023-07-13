@@ -20,8 +20,10 @@ android:layout_width="match_parent" android:layout_height="match_parent">
         <ImageView
             android:id="@+id/web_development_img"
             android:layout_width="match_parent"
+            android:contentDescription="web development"
             android:layout_height="158dp"
             android:clickable="true"
+
             android:scaleType="centerCrop"
             android:src="@drawable/img" />
 

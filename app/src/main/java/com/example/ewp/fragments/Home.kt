@@ -10,6 +10,7 @@ import com.example.ewp.R
 
 
 class Home : Fragment() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -28,9 +29,18 @@ class Home : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val webdimg = view.findViewById<ImageView>(R.id.web_development_img)
-        webdimg.setOnClickListener {
+        view?.findViewById<ImageView>(R.id.web_development_img)?.setOnClickListener {
+            val fragmentManager = requireActivity().supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
 
+            // Replace the current fragment with the new fragment
+            fragmentTransaction.replace(R.id.frame_layout, WebDevelopmentSub())
+
+            // Add the transaction to the back stack (optional)
+            fragmentTransaction.addToBackStack(null)
+
+            // Commit the transaction
+            fragmentTransaction.commit()
         }
 
     }
