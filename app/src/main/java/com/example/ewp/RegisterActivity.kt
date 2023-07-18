@@ -44,7 +44,12 @@ class RegisterActivity : AppCompatActivity() {
 
             auth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener {
                 if (it.isSuccessful) {
-                    startActivity(Intent(this,FrameContainer::class.java))
+                    auth.currentUser?.sendEmailVerification()?.addOnCompleteListener() { task->
+                        if(task.isSuccessful) {
+                            Toast.makeText(this,"Verify mail then login",Toast.LENGTH_LONG).show()
+                            startActivity(Intent(this,LoginActivity::class.java))
+                        }
+                    }
                 }
                 else {
                     val exception = it.exception.toString()
