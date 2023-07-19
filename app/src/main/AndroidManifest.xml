@@ -3,16 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:enableOnBackInvokedCallback="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:enableOnBackInvokedCallback="true"
+        android:theme="@style/Theme.NavigationDrawer"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:theme="@style/Theme.Ewp"
         tools:targetApi="31">
         <activity
+            android:name=".FrameContainer2"
+            android:theme="@style/Theme.FrameContainer2"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreen"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,11 +38,9 @@
         <activity
             android:name=".HomeActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:hardwareAccelerated="true"
-            android:theme="@style/transparentststusbar">
-
-        </activity>
+            android:label="@string/app_name"
+            android:theme="@style/transparentststusbar"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

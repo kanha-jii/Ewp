@@ -26,6 +26,5 @@ class WebDevelopmentSub : Fragment() {
         val mywebView = view.findViewById<WebView>(R.id.web_view)
         mywebView.settings.javaScriptEnabled = true
         mywebView.loadUrl("https://www.ewebsiteprovider.com")
-
     }
 }

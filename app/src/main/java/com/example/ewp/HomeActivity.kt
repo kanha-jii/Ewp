@@ -27,7 +27,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         if(FirebaseAuth.getInstance().currentUser != null) {
-            val intent = Intent(this,FrameContainer::class.java)
+            val intent = Intent(this,FrameContainer2::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         }

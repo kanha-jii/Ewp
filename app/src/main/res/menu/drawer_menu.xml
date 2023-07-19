@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home2"
+            android:icon="@drawable/baseline_home_24"
+            android:title="HOME" />
+        <item
+            android:id="@+id/services"
+            android:icon="@raw/ic_services"
+            android:title="SERVICES" />
+        <item
+            android:id="@+id/about_us"
+            android:icon="@raw/ic_about_us"
+            android:title="ABOUT US" />
+
+    </group>
+
+    <item android:title="Configure">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/settings"
+                    android:icon="@raw/ic_settings"
+                    android:title="Setting" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Social">
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/com_whatsapp"
+                    android:icon="@raw/ic_whatsapp"
+                    android:title="Chat With us" />
+                <item
+                    android:id="@+id/com_linkedin"
+                    android:icon="@raw/ic_linkedin"
+                    android:title="Linkedin" />
+                <item
+                    android:id="@+id/com_facebook"
+                    android:icon="@raw/ic_facebook"
+                    android:title="Facebook" />
+                <item
+                    android:id="@+id/com_twitter"
+                    android:icon="@raw/ic_twitter"
+                    android:title="Twitter" />
+                <item
+                    android:id="@+id/com_instagram"
+                    android:icon="@raw/ic_instagram"
+                    android:title="Instagram" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Communicate">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/share_app"
+                    android:icon="@raw/ic_app_share"
+                    android:title="Share" />
+                <item
+                    android:id="@+id/rate_app"
+                    android:icon="@raw/ic_rate_app"
+                    android:title="Rate App" />
+                <item
+                    android:id="@+id/send_feedback"
+                    android:icon="@raw/ic_send_feedback"
+                    android:title="Send Feedback" />
+                <item
+                    android:id="@+id/more_apps"
+                    android:icon="@raw/ic_more_apps"
+                    android:title="More Apps" />
+            </group>
+        </menu>
+
+    </item>
+
+    <item android:title="Policies">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/terms_and_conditions"
+                    android:icon="@raw/ic_termsconditions"
+                    android:title="Terms&amp;Conditions" />
+                <item
+                    android:id="@+id/privacy_policy"
+                    android:icon="@raw/ic_privacypolicy"
+                    android:title="Privacy Policy" />
+                <item
+                    android:id="@+id/FAQs"
+                    android:icon="@raw/ic_faqs"
+                    android:title="FAQs" />
+            </group>
+        </menu>
+
+    </item>
+</menu>
