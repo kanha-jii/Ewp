@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
                 mAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener {
                     if(it.isSuccessful) {
                         if(mAuth.currentUser?.isEmailVerified == true) {
-                            startActivity(Intent(this,FrameContainer::class.java))
+                            startActivity(Intent(this,FrameContainer2::class.java))
                         }
                         else {
                             Toast.makeText(this,"Verify your mail first",Toast.LENGTH_LONG).show()

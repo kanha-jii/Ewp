@@ -1,39 +1,31 @@
 package com.example.ewp
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.Gravity
-import android.view.KeyEvent
 import android.view.MenuItem
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
-import android.widget.Toolbar
-import android.window.OnBackInvokedDispatcher
-import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.ewp.fragments.Home
 import com.example.ewp.fragments.sidedrawer.Home2
 import com.google.android.material.navigation.NavigationView
-
+import com.google.firebase.auth.FirebaseAuth
 
 class FrameContainer2 : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    lateinit var toggle: ActionBarDrawerToggle
-    lateinit var navigationView: NavigationView
-    lateinit var drawerLayout: DrawerLayout
+    private lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var navigationView: NavigationView
+    private lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_frame_container2)
         navigationView = findViewById(R.id.nav_view)
-        drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
-        drawerLayout.isFocusableInTouchMode = false;
+        drawerLayout = findViewById(R.id.drawer_layout)
+        drawerLayout.isFocusableInTouchMode = false
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close)
@@ -73,8 +65,19 @@ class FrameContainer2 : AppCompatActivity(), NavigationView.OnNavigationItemSele
 //        }
 //
 //        this@FrameContainer2.onBackPressedDispatcher.addCallback(this@FrameContainer2, callback)
-
-
+//        val onBackPressedCallback = object: OnBackPressedCallback(true) {
+//
+//            override fun handleOnBackPressed() {
+//
+//                // Your business logic to handle the back pressed event
+//                Toast.makeText(baseContext,"hiiii",Toast.LENGTH_LONG).show()
+//
+//            }
+//            override fun
+//
+//        }
+//        this.onBackPressedDispatcher
+//            .addCallback(onBackPressedCallback)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -104,6 +107,15 @@ class FrameContainer2 : AppCompatActivity(), NavigationView.OnNavigationItemSele
                 replaceFragment(Home2(4))
                 navigationView.setCheckedItem(R.id.send_feedback)
             }
+
+            R.id.com_whatsapp -> {
+//                if(FirebaseAuth.getInstance().currentUser.email.toString() == "kanhasinghal0101@gmail.com") {
+                    val intent = Intent(this, AdminChatUsersList::class.java)
+                    startActivity(intent)
+            }
+            R.id.settings -> {
+                startActivity(Intent(this,AppSettings::class.java))
+            }
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return false
@@ -127,7 +139,7 @@ class FrameContainer2 : AppCompatActivity(), NavigationView.OnNavigationItemSele
 //        }
 //    }
 //    override fun onBackPressed() {
-//        super.onBackPressed()
+//        Toast.makeText(this,"hello my custom onBackPressed is called",Toast.LENGTH_LONG).show()
 //    }
 
 //    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
