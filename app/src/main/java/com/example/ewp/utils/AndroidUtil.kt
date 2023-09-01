@@ -14,3 +14,12 @@ fun passUserModelAsIntent(intent: Intent,model: UserModel) {
     intent.putExtra("userId",model.userId)
     intent.putExtra("userDp",model.userProfilePic)
 }
+
+fun getUserModelFromIntent(intent: Intent): UserModel {
+    val userModel = UserModel()
+    userModel.userProfilePic = intent.getStringExtra("userDp")
+    userModel.userName = intent.getStringExtra("userName")
+    userModel.userId = intent.getStringExtra("userId").toString()
+    return userModel
+}
+

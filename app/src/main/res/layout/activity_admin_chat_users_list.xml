@@ -14,7 +14,7 @@
         android:background="@color/grey"
         android:backgroundTint="@color/lavender"
         android:elevation="4dp"
-        app:menu="@menu/users_chat_list"
+        android:paddingHorizontal="30dp"
         android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
         app:layout_constraintEnd_toEndOf="parent"

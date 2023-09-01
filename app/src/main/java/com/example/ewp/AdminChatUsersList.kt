@@ -42,6 +42,7 @@ class AdminChatUsersList : AppCompatActivity() {
             .build()
         adapter = SearchUserRecyclerAdapter(options,applicationContext)
         val myRecyclerView =  findViewById<RecyclerView>(R.id.users_recycler)
+        myRecyclerView.itemAnimator = null
         myRecyclerView.adapter = adapter
         myRecyclerView.layoutManager = LinearLayoutManager(this)
         adapter.startListening()
@@ -49,6 +50,11 @@ class AdminChatUsersList : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        adapter.startListening()
+    }
+
+    override fun onResume() {
+        super.onResume()
         adapter.startListening()
     }
     override fun onStop() {

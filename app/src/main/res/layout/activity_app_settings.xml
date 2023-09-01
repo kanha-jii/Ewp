@@ -4,97 +4,297 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
     tools:context=".AppSettings">
 
 
-    <ScrollView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="56dp"
+        app:titleTextColor="@color/black"
+        app:subtitleTextColor="@color/grey"
+        android:backgroundTint="@color/white"
+        android:elevation="4dp"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:subtitle="Grow Digitally"
+        app:title="E-website Providers"
+        app:titleTextAppearance="@style/RobotoBoldTextAppearance" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/sv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+            android:src="@raw/ic_menu"
+            android:layout_marginVertical="10dp"
+            />
+
+
+
+    </RelativeLayout>
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
 
         <LinearLayout
+            android:id="@+id/ll"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             >
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:background="@color/grey"
-                android:elevation="4dp"
-                app:navigationIcon="?attr/homeAsUpIndicator"
-                android:backgroundTint="@color/lavender"
-                android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
-                app:subtitle="Grow Digitally"
-                app:title="E-website Providers"
-                app:titleTextAppearance="@style/RobotoBoldTextAppearance" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="10dp">
-
-                <ImageView
-                    android:id="@+id/user_image_circle"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/circular_bg"
-                    app:srcCompat="@drawable/baseline_account_circle_24" />
-
-                <TextView
+            <TextView
+                    android:layout_marginLeft="20dp"
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Settings"
-                    android:textColor="@color/white"
-                    android:textSize="30sp"
-                    android:layout_toRightOf="@+id/user_image_circle"/>
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginBottom="40dp"
+                >
+
+                <ImageView
+                    android:id="@+id/profile_image_select"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/logo_home"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/profile_image_select"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    >
+
+                <TextView
+                    android:id="@+id/settings_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jhon Dee"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_centerVertical="true"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="example@gmail.com"
+                    android:layout_alignParentBottom="true"
+                    />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/edit_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/roundbutton"
+                    android:text="Edit"
+                    />
 
             </RelativeLayout>
 
 
-            <EditText
-                android:id="@+id/editTextText"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginVertical="10dp"
-                android:background="@drawable/edit_text_rounded_corner"
-                android:hint="Enter username"
-                android:inputType="text"
-                android:padding="10dp"
-                android:textAlignment="center" />
 
-            <EditText
-                android:id="@+id/editTextText2"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginHorizontal="10dp"
-                android:ems="10"
-                android:padding="10dp"
-                android:background="@drawable/edit_text_rounded_corner"
-                android:inputType="text"
-                android:hint="Enter Image"/>
-
-            <Button
-                android:id="@+id/bt_user_details_submit"
-                android:layout_width="200dp"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="#FF5722"
-                android:text="Submit" />
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical"
+                >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:id="@+id/setting1"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:src="@raw/ic_settings"
+                        android:layout_marginRight="10dp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/setting1"
+                        android:padding="5dp"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="General"
+                            android:textSize="19sp"
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dark mode"
+                            />
 
 
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:id="@+id/setting2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/baseline_account_circle_24"
+                        android:layout_marginRight="10dp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/setting2"
+                        android:padding="5dp"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Account"
+                            android:textSize="19sp"
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Change Password"
+                            />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:id="@+id/setting3"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/baseline_logout_24"
+                        android:layout_marginRight="10dp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/setting3"
+                        android:padding="5dp"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Help &amp; Feedback"
+                            android:textSize="19sp"
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="FAQs, Feedback"
+                            />
+
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:id="@+id/setting4"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:src="@raw/ic_settings"
+                        android:layout_marginRight="10dp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/setting4"
+                        android:padding="5dp"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Logout"
+                            android:textSize="19sp"
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="logout from app"
+                            />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

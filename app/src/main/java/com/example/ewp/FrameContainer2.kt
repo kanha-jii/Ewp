@@ -11,9 +11,8 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.ewp.fragments.Home
-import com.example.ewp.fragments.sidedrawer.Home2
+import com.example.ewp.utils.currentUser
 import com.google.android.material.navigation.NavigationView
-import com.google.firebase.auth.FirebaseAuth
 
 class FrameContainer2 : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var toggle: ActionBarDrawerToggle
@@ -33,9 +32,9 @@ class FrameContainer2 : AppCompatActivity(), NavigationView.OnNavigationItemSele
         navigationView.setNavigationItemSelectedListener(this)
 
         if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction().replace(R.id.frame_container, Home2(2))
+            supportFragmentManager.beginTransaction().replace(R.id.frame_container, Home())
                 .commit()
-            navigationView.setCheckedItem(R.id.home2)
+            navigationView.setCheckedItem(R.id.services)
         }
 
         toggle.syncState()
@@ -88,30 +87,35 @@ class FrameContainer2 : AppCompatActivity(), NavigationView.OnNavigationItemSele
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.home2 -> {
-                replaceFragment(Home2(2))
-                navigationView.setCheckedItem(R.id.home2)
-            }
+//            R.id.home2 -> {
+//                replaceFragment(Home2())
+//                navigationView.setCheckedItem(R.id.home2)
+//            }
 
             R.id.services -> {
                 replaceFragment(Home())
                 navigationView.setCheckedItem(R.id.services)
             }
 
-            R.id.about_us -> {
-                replaceFragment(Home2(3))
-                navigationView.setCheckedItem(R.id.about_us)
-            }
-
-            R.id.send_feedback -> {
-                replaceFragment(Home2(4))
-                navigationView.setCheckedItem(R.id.send_feedback)
-            }
+//            R.id.about_us -> {
+//                replaceFragment(Home2())
+//                navigationView.setCheckedItem(R.id.about_us)
+//            }
+//
+//            R.id.send_feedback -> {
+//                replaceFragment(Home2())
+//                navigationView.setCheckedItem(R.id.send_feedback)
+//            }
 
             R.id.com_whatsapp -> {
 //                if(FirebaseAuth.getInstance().currentUser.email.toString() == "kanhasinghal0101@gmail.com") {
+                if(currentUser()?.email == "kanhasinghal0101@gmail.com") {
                     val intent = Intent(this, AdminChatUsersList::class.java)
                     startActivity(intent)
+                }
+                else {
+                    startActivity(Intent(this,ChatActivity::class.java))
+                }
             }
             R.id.settings -> {
                 startActivity(Intent(this,AppSettings::class.java))

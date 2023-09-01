@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.airbnb.lottie.LottieAnimationView
 import com.bumptech.glide.Glide
 
 
@@ -22,12 +23,15 @@ class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
-        val gifImageView = findViewById<ImageView>(R.id.gifImageView)
-        Glide.with(this)
-            .asGif()
-            .load(R.drawable.ewpsplash)
-            .fitCenter().into(gifImageView)
-        Log.d("android","splash screen")
+        val ll= findViewById<LottieAnimationView>(R.id.lottie_anim)
+        ll.playAnimation()
+
+//        val gifImageView = findViewById<ImageView>(R.id.gifImageView)
+//        Glide.with(this)
+//            .asGif()
+//            .load(R.drawable.ewpsplash)
+//            .fitCenter().into(gifImageView)
+//        Log.d("android","splash screen")
 //            .submit().get() as GifDrawable
 
 //        val frameCount = gifDrawable.frameCount

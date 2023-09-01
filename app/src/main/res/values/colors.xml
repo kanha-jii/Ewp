@@ -11,5 +11,8 @@
     <color name="red">#DC0A0A</color>
     <color name="lavender">#967bb6</color>
     <color name="my_primary">#FF5964</color>
+    <color name="chat_color_sender">#1E88E5</color>
+    <color name="chat_color_receiver">#7CB342</color>
+    <color name="setting_button_color">#0557BC</color>
 
 </resources>

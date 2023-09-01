@@ -37,7 +37,7 @@ class Home : Fragment() {
 //            fragmentTransaction.replace(R.id.frame_layout, WebDevelopmentSub())
 
             // Add the transaction to the back stack (optional)
-            fragmentTransaction.addToBackStack(null)
+//            fragmentTransaction.addToBackStack(null)
 
             // Commit the transaction
             fragmentTransaction.commit()

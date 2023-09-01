@@ -10,13 +10,17 @@
         android:theme="@style/Theme.NavigationDrawer"
         tools:targetApi="31">
         <activity
-            android:name=".ChatActivity"
+            android:name=".EditProfile"
             android:exported="false"
             android:theme="@style/Theme.FrameContainer2"/>
         <activity
-            android:name=".AppSettings"
+            android:name=".ChatActivity"
             android:exported="false"
             android:theme="@style/Theme.FrameContainer2" />
+        <activity
+            android:name=".AppSettings"
+            android:exported="true"
+            android:theme="@style/Theme.AppSetting" />
         <activity
             android:name=".AdminChatUsersList"
             android:exported="false"
@@ -31,7 +35,6 @@
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
